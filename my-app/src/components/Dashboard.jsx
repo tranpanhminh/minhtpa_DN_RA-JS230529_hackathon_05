@@ -2,10 +2,9 @@ import React, { useEffect, useState } from "react";
 import { Button } from "antd";
 import "./style.css";
 import axios from "axios";
-import { useParams } from "react-router-dom";
 function Dashboard() {
-  const { roundId } = useParams();
   const [dataGame, setDataGame] = useState([]);
+  const [score, setScore] = useState(0);
   const fetchDataGame = () => {
     axios
       .get("http://localhost:5000/api/database/")
@@ -21,7 +20,7 @@ function Dashboard() {
 
   useEffect(() => {
     fetchDataGame();
-  }, []);
+  }, [score]);
 
   const handleAddRound = (gameId) => {
     const findGame = dataGame?.find((item) => {
@@ -52,6 +51,38 @@ function Dashboard() {
       .then((response) => {
         fetchDataGame();
       });
+  };
+
+  const handleChangeScore = async (event, gameId, playerId, roundId) => {
+    try {
+      setScore(event);
+      console.log(gameId, "gameID", playerId, "PlayerID", roundId, "ROUND ID");
+      let updatedScore = event; // Sửa đổi để sử dụng event thay vì score
+
+      // Gửi PATCH request để cập nhật điểm số
+      await axios.patch(
+        `http://localhost:5000/api/database/game/${gameId}/player/${playerId}/round/${roundId}`,
+        { score: updatedScore }
+      );
+
+      // Cập nhật dữ liệu game sau khi PATCH thành công
+      const updatedData = [...dataGame]; // Tạo một bản sao của dataGame
+      const gameIndex = updatedData.findIndex((game) => game.id === gameId);
+      const playerIndex = updatedData[gameIndex].players.findIndex(
+        (player) => player.idPlayer === playerId
+      );
+
+      // Tìm roundIndex dựa vào roundId
+      const roundIndex = updatedData[gameIndex].players[
+        playerIndex
+      ].rounds.findIndex((round) => round.idRound === roundId);
+
+      updatedData[gameIndex].players[playerIndex].rounds[roundIndex].score =
+        updatedScore;
+      fetchDataGame();
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (
@@ -105,8 +136,16 @@ function Dashboard() {
                             <input
                               className="input-score"
                               type="number"
-                              min={0}
+                              // value={score}
                               defaultValue={unit.rounds[index].score}
+                              onChange={(event) => {
+                                handleChangeScore(
+                                  event.target.value,
+                                  latestGame?.id,
+                                  unit?.idPlayer,
+                                  unit?.rounds[index].idRound
+                                );
+                              }}
                             />
                           </td>
                         );
