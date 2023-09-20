@@ -1,0 +1,52 @@
+.score-keeper-board {
+  width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.group-player-input {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.group-player-input input {
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px ridge #ccc;
+  width: 100%;
+}
+
+.create-game-btn {
+  width: 20%;
+}
+
+.table-dashboard {
+  width: 1000px;
+  margin: 0 auto;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+.thead-player {
+  font-weight: bold;
+}
+
+.score-thead {
+  background-color: blue;
+  color: white;
+}
+
+.input-score {
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px ridge #aaa;
+}
+
+.add-round-btn {
+  background-color: blue;
+}
