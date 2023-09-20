@@ -83,13 +83,13 @@ function checkUserIdPost(req, res, next) {
 // ------------------------- MiddleWare ------------------------
 
 // ------------------------ Users Routes -----------------------
-// Câu 1: GET →  Lấy về dữ liệu của một user
+// Câu 1: GET ->  Lấy về dữ liệu của một user
 app.get("/api/users/:id", checkUserID, (req, res) => {
   const user = req.user;
   res.status(200).json(user);
 });
 
-// Câu 2: GET →  Lấy về dữ liệu của toàn bộ users
+// Câu 2: GET ->  Lấy về dữ liệu của toàn bộ users
 app.get("/api/users", (req, res) => {
   if (dataUser) {
     res.status(200).json(dataUser);
@@ -98,7 +98,7 @@ app.get("/api/users", (req, res) => {
   }
 });
 
-// Câu 3: POST →  Thêm mới dữ liệu về 1 users vào trong CSDL
+// Câu 3: POST ->  Thêm mới dữ liệu về 1 users vào trong CSDL
 app.post("/api/users/add", checkUserEmail, (req, res) => {
   const newUser = req.body;
   console.log(newUser, "NEW USER");
@@ -129,7 +129,7 @@ app.post("/api/users/add", checkUserEmail, (req, res) => {
   res.status(200).json({ message: "User Added" });
 });
 
-// Câu 4: PUT →  Chỉnh sửa dữ liệu của 1 user (email)
+// Câu 4: PUT ->  Chỉnh sửa dữ liệu của 1 user (email)
 app.put("/api/users/edit/:id", checkUserID, checkUserEmail, (req, res) => {
   const user = req.user;
   const updatedUser = req.body;
@@ -155,7 +155,7 @@ app.put("/api/users/edit/:id", checkUserID, checkUserEmail, (req, res) => {
   }
 });
 
-// Câu 5: DELETE	 →  Xoá dữ liệu của 1 user
+// Câu 5: DELETE	->  Xoá dữ liệu của 1 user
 app.delete("/api/users/delete/:id", checkUserID, (req, res) => {
   const user = req.user;
   const filterUser = dataUser.filter((item) => {
@@ -168,13 +168,13 @@ app.delete("/api/users/delete/:id", checkUserID, (req, res) => {
 // ------------------------ Users Routes -----------------------
 
 // ------------------------ Posts Routes -----------------------
-// Câu 6: GET →  Lấy về dữ liệu của một post
+// Câu 6: GET ->  Lấy về dữ liệu của một post
 app.get("/api/posts/:id", checkPostID, (req, res) => {
   const post = req.post;
   res.status(200).json(post);
 });
 
-// Câu 7: GET →  Lấy về dữ liệu của toàn bộ post
+// Câu 7: GET ->  Lấy về dữ liệu của toàn bộ post
 app.get("/api/posts", (req, res) => {
   if (dataPost) {
     res.status(200).json(dataPost);
@@ -183,7 +183,7 @@ app.get("/api/posts", (req, res) => {
   }
 });
 
-// Câu 8: POST →  Thêm mới dữ liệu về 1 post vào trong CSDL
+// Câu 8: POST ->  Thêm mới dữ liệu về 1 post vào trong CSDL
 app.post("/api/posts/add", (req, res) => {
   const newPost = req.body;
   if (!newPost.userId || !newPost.title || !newPost.body) {
@@ -212,7 +212,7 @@ app.post("/api/posts/add", (req, res) => {
   }
 });
 
-// Câu 9: PUT →  Chỉnh sửa dữ liệu của 1 post
+// Câu 9: PUT -> Chỉnh sửa dữ liệu của 1 post
 app.put("/api/posts/edit/:id", checkPostID, checkUserIdPost, (req, res) => {
   const post = req.post;
   const updatedPost = req.postData;
@@ -239,7 +239,7 @@ app.put("/api/posts/edit/:id", checkPostID, checkUserIdPost, (req, res) => {
   }
 });
 
-// Câu 10: DELETE	 →  Xoá dữ liệu của 1 post
+// Câu 10: DELETE	 ->  Xoá dữ liệu của 1 post
 app.delete("/api/posts/delete/:id", checkPostID, (req, res) => {
   const post = req.post;
   const filterPost = dataPost.filter((item) => {
