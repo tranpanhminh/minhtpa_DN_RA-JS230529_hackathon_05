@@ -9,7 +9,7 @@ app.use(bodyParser.json());
 // ADD THIS
 var cors = require("cors");
 app.use(cors());
-
+// Comment
 const readFileData = fs.readFileSync("./database/database.json", "utf-8");
 const database = JSON.parse(readFileData);
 // Get Database
