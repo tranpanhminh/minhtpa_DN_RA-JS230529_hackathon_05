@@ -182,7 +182,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"userId\": 1,\r\n    \"id\": 1,\r\n    \"title\": \"sunt aut facere repellat provident occaecati excepturi optio reprehenderit\",\r\n    \"body\": \"quia et suscipit\\nsuscipit recusandae consequuntur expedita et cum\\nreprehenderit molestiae ut ut quas totam\\nnostrum rerum est autem sunt rem eveniet architecto\"\r\n  }",
+							"raw": "{\r\n    \"userId\": 17,\r\n    \"title\": \"New Post 109\",\r\n    \"body\": \"Content Of New Post 109\"\r\n  }",
 							"options": {
 								"raw": {
 									"language": "json"
