@@ -1,0 +1,138 @@
+[
+  {
+    "id": 1,
+    "players": [
+      {
+        "idPlayer": 1,
+        "name": "An",
+        "rounds": [{ "idRound": 1, "score": -2 }]
+      },
+      {
+        "idPlayer": 2,
+        "name": "Khang",
+        "rounds": [{ "idRound": 1, "score": -2 }]
+      },
+      {
+        "idPlayer": 3,
+        "name": "Thịnh",
+        "rounds": [{ "idRound": 1, "score": -2 }]
+      },
+      {
+        "idPlayer": 4,
+        "name": "Vượng",
+        "rounds": [{ "idRound": 1, "score": -2 }]
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "players": [
+      {
+        "idPlayer": 1,
+        "name": "An",
+        "rounds": [
+          { "idRound": 1, "score": -2 },
+          { "idRound": 2, "score": 5 }
+        ]
+      },
+      {
+        "idPlayer": 2,
+        "name": "Khang",
+        "rounds": [
+          { "idRound": 1, "score": -2 },
+          { "idRound": 2, "score": 5 }
+        ]
+      },
+      {
+        "idPlayer": 3,
+        "name": "Thịnh",
+        "rounds": [
+          { "idRound": 1, "score": -2 },
+          { "idRound": 2, "score": 5 }
+        ]
+      },
+      {
+        "idPlayer": 4,
+        "name": "Vượng",
+        "rounds": [
+          { "idRound": 1, "score": -2 },
+          { "idRound": 2, "score": 5 }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "players": [
+      {
+        "idPlayer": 1,
+        "name": "An",
+        "rounds": [
+          { "idRound": 1, "score": 2 },
+          { "idRound": 2, "score": 6 }
+        ]
+      },
+      {
+        "idPlayer": 2,
+        "name": "Khang",
+        "rounds": [
+          { "idRound": 1, "score": -3 },
+          { "idRound": 2, "score": -5 }
+        ]
+      },
+      {
+        "idPlayer": 3,
+        "name": "Thịnh",
+        "rounds": [
+          { "idRound": 1, "score": 4 },
+          { "idRound": 2, "score": 2 }
+        ]
+      },
+      {
+        "idPlayer": 4,
+        "name": "Vượng",
+        "rounds": [
+          { "idRound": 1, "score": 1 },
+          { "idRound": 2, "score": 5 }
+        ]
+      }
+    ]
+  },
+  {
+    "players": [
+      {
+        "idPlayer": 1,
+        "name": "Thượng",
+        "rounds": [
+          { "idRound": 1, "score": 0 },
+          { "idRound": 2, "score": 0 }
+        ]
+      },
+      {
+        "idPlayer": 2,
+        "name": "Lộ",
+        "rounds": [
+          { "idRound": 1, "score": 0 },
+          { "idRound": 2, "score": 0 }
+        ]
+      },
+      {
+        "idPlayer": 3,
+        "name": "Bình",
+        "rounds": [
+          { "idRound": 1, "score": 0 },
+          { "idRound": 2, "score": 0 }
+        ]
+      },
+      {
+        "idPlayer": 4,
+        "name": "An",
+        "rounds": [
+          { "idRound": 1, "score": 0 },
+          { "idRound": 2, "score": 0 }
+        ]
+      }
+    ],
+    "id": 4
+  }
+]
