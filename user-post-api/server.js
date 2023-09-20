@@ -133,9 +133,7 @@ app.post("/api/users/add", checkUserEmail, (req, res) => {
 app.put("/api/users/edit/:id", checkUserID, checkUserEmail, (req, res) => {
   const user = req.user;
   const updatedUser = req.body;
-  console.log(user, "user");
 
-  console.log(updatedUser, "UPDATED USEr");
   if (!updatedUser.email) {
     return res.status(400).json({ message: "Data Error" });
   }
